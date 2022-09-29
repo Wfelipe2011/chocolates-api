@@ -59,5 +59,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Product[]>
 ) {
-  res.status(200).json(products)
+  // change order products aleatoric 
+  const productsAleatoric = products.sort(() => Math.random() - 0.5)
+  res.status(200).json(productsAleatoric)
 }
